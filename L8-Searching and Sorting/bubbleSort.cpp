@@ -5,15 +5,15 @@ void swap(int *a,int *b)
 {
     int temp = *a;
     *a = *b;
-    *b = temp;
-}
+    *b = temp;                  
+}                               
 
 void bubblesort(int b[], int size)
 {
     int end = size - 1;
     for (int i = 0; i < size-1; i++)
     {
-        for (int j = 0; j <= end; j++)
+        for (int j = 0; j < end; j++)
         {
             if (b[j]>b[j+1])
             {
