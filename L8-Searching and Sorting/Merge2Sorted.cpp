@@ -49,7 +49,7 @@ int main()
     int n,m,arr1[50],arr2[50];
     cout<<"Enter the no. of elements in 1st Array : ";
     cin>>n;
-    cout<<"Enter the no. of elements in 1st Array : ";
+    cout<<"Enter the no. of elements in 2nd Array : ";
     cin>>m;
     const int c=n+m;
     int arr3[c];
