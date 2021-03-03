@@ -40,13 +40,49 @@ using namespace std;
 
 bool checkpermutation(char input1[],char input2[])
 {
+    int length1 = strlen(input1);
+    int length2 = strlen(input2);
+    if (length1!=length2)
+    {
+        cout<<"They can't be permutated"<<endl;
+        return false;   
+    }
+    int freq[256] = {0};
+    for (int i = 0; i < length1; i++)
+    {   
+        freq[int(input1[i])] = freq[int(input1[i])] + 1;            
+    }
+    for (int j = 0; j < length2; j++)
+    {
+        freq[int(input2[j])] = freq[int(input2[j])] - 1;
+    }
+    for (int k = 0; k < 256; k++)
+    {
+        if (freq[k]!=0)
+        {
+            return false;
+        }
+        
+    }
+    return true;
+    
     
 }
-
+//complexity is O(n)
 int main()
 {
     char a[100],b[100];
-    cin>>a>>b;
-    cout<<checkpermutation(a,b);
+    cout<<"Enter String 1 from which to check : ";
+    cin>>a;
+    cout<<"Enter String 2 which to check : ";
+    cin>>b;
     
+    if (checkpermutation(a,b))
+    {
+        cout<<"Yes! they are permutated string.";
+    }
+    else
+    {
+        cout<<"They are not permutated string";
+    }
 }
